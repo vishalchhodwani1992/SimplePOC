@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="errorResultAudioError">Audio recording failed. Maybe another app is currently recording.</string>
+    <string name="errorResultNetworkError">Server not reachable. The internet connection is broken or the server is down.</string>
+    <string name="errorResultClientError">General client error</string>
+    <string name="errorResultServerError">Recognizer server error</string>
+    <string name="errorResultNoMatch">Transcription was not found for the recorded speech. Please try again!</string>
+    <string name="errorResultCanceled">Canceled</string>
+
+    <string name="errorTtsLangNotAvailable">ERROR: Spoken output not available for language \"%1$s\"</string>
+    <string name="errorTtsInitError">ERROR: Spoken output initialization failed</string>
+    <string name="errorFailedLaunchIntent">ERROR: Intent is not serviced by any app</string>
+
+
+    <string name="select_contact_title">Select a contact</string>
+
+    <string name="locked">PTT App is locked. Please unlock the app using the sample misc project.</string>
+
+    <string name="audio_speaker">SPEAKER</string>
+    <string name="audio_earpiece">EARPIECE</string>
+    <string name="audio_bluetooth">BLUETOOTH</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="sign_in_status_offline">Please sign in using the sample sign in project.</string>
+    <string name="sign_in_status_signing_in">Signing in\u2026</string>
+    <string name="no_selected_contact">Please select a contact using the menu or the sample contact project.</string>
+    <string name="talk_button">Push to talk</string>
+
+    <string name="unmute_contact">Unmute contact</string>
+    <string name="mute_contact">Mute contact</string>
+    <string name="replay_last_message">Replay last message</string>
+    <string name="connect_channel">Connect channel</string>
+    <string name="disconnect_channel">Disconnect channel</string>
+    <string name="menu_select_contact">Select contact</string>
+
+    <string name="selected_contact" formatted="false">Selected contact: %s</string>
+
+    <string name="receiving_message_channel_author" formatted="false">Receiving message from %s \\ %s</string>
+    <string name="receiving_message_sender" formatted="false">Receiving message from %s</string>
+    <string name="connecting_to_contact" formatted="false">Connecting to %s</string>
+    <string name="outgoing_message_to_contact" formatted="false">Outgoing message to %s</string>
+
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="network">Network URL</string>
+    <string name="sign_in">Sign in"</string>
+    <string name="sign_out">Sign out"</string>
+    <string name="perishable">Do not save account data</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="signing_in">Signing in\u2026"</string>
+    <string name="signed_in">You are signed in.</string>
+
+    <string name="error_unknown">Unknown error.</string>
+    <string name="error_invalid_credentials">Invalid username or password.</string>
+    <string name="error_invalid_network_name">Invalid network.</string>
+    <string name="error_network_suspended">Network suspended.</string>
+    <string name="error_secure_connect_failed">Can\'t establish a secure connection to the server.</string>
+    <string name="error_server_signin_failed">Can\'t connect to the server.</string>
+    <string name="error_network_signin_failed">Can\'t join the network.</string>
+    <string name="error_kicked">You signed in on another device.</string>
+    <string name="error_update_required">Client software update is required.</string>
+    <string name="error_no_internet">No internet.</string>
+    <string name="error_internet_restricted">Internet access is restricted.</string>
+    <string name="error_server_license">Server license problem.</string>
+    <string name="error_brute_force_protection">You\'ve used incorrect credentials too many times.</string>
+
+
+
+    <string name="parse_server_url"></string>
+    <string name="parse_app_id"></string>
+</resources>

@@ -1,0 +1,42 @@
+<resources>
+
+
+
+
+    <style name="AppThemeBase" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
+    <style name="AppTheme" parent="AppThemeBase">
+    </style>
+
+
+    <style name="FullScreenTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+
+        <!--   <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+           <item name="android:statusBarColor">@android:color/transparent</item>
+           <item name="android:windowTranslucentStatus">true</item>-->
+
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/buttonWaiting</item>
+        <item name="colorPrimaryDark">@color/buttonWaiting</item>
+        <item name="colorAccent">@color/buttonWaiting</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:titleTextColor">@color/buttonWaiting</item>
+        <item name="android:textColor">@color/buttonWaiting</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+</resources>
