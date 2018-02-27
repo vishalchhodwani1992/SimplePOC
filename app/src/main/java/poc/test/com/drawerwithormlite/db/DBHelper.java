@@ -12,9 +12,6 @@ import java.util.ArrayList;
 
 import poc.test.com.drawerwithormlite.model.UserData;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
 
 public class DBHelper extends OrmLiteSqliteOpenHelper {
     public static String DATABASE_NAME="db";

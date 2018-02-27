@@ -13,9 +13,7 @@ import poc.test.com.drawerwithormlite.activity.DrawerActivity;
 import poc.test.com.drawerwithormlite.model.UserData;
 import poc.test.com.drawerwithormlite.model.UserDataDaoBean;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
+
 
 public class DetailFragment extends Fragment {
     TextView name,fatherName,gender;

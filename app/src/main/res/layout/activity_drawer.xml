@@ -28,7 +28,7 @@
 
                 <ImageView
                     android:id="@+id/slider"
-                    android:src="@android:drawable/ic_menu_today"
+                    android:src="@drawable/menu"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_width="wrap_content"

@@ -1,13 +1,16 @@
 package poc.test.com.drawerwithormlite.netcom;
 
-/**
- * Created by ashishthakur on 22/2/18.
- */
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+
 
 public interface ApiConstants {
+/*
+     String BASE_URL = "https://cdnsolutionsgroup.com/trbe/services/influencer/";
 
-    public static final String BASE_URL = "https://restcountries.eu/rest/v1/";
+    String getListCountry = "getUserInfo";*/
 
-    public static String getListCountry = "all";
+    String BASE_URL = "https://restcountries.eu/rest/v1/";
+
+    String getListCountry = "all";
 
 }

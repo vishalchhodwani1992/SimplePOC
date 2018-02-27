@@ -2,15 +2,11 @@ package poc.test.com.drawerwithormlite.application;
 
 import android.app.Application;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.greenrobot.greendao.database.Database;
 
-import java.io.IOException;
-
-import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import poc.test.com.drawerwithormlite.model.DaoMaster;
 import poc.test.com.drawerwithormlite.model.DaoSession;
 import poc.test.com.drawerwithormlite.netcom.Api;
@@ -18,9 +14,6 @@ import poc.test.com.drawerwithormlite.netcom.ApiConstants;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
 
 public class PocApp extends Application {
     public static PocApp instance;
@@ -28,15 +21,11 @@ public class PocApp extends Application {
     DaoSession daoSession;
     Database db;
     Api api;
-
-
     public static PocApp getInstance() {
         if (instance == null)
             instance = new PocApp();
-
         return instance;
     }
-
     public static Retrofit getClient(String BASE_URL) {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
@@ -46,7 +35,6 @@ public class PocApp extends Application {
         }
         return retrofit;
     }
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -69,8 +57,18 @@ public class PocApp extends Application {
         return daoSession;
     }
 
-    public Database getDatabse() {
-        return db;
-    }
 
+   /* private Retrofit getApiClient(String baseUrl) {
+        if (retrofit == null) {
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .client(new SelfSignInClient(mContext).getOkHttpClient())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .build();
+        }
+        return retrofit;
+    }*/
 }

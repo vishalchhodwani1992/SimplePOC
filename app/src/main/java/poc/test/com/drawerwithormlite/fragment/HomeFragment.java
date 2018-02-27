@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,25 +14,24 @@ import android.view.ViewGroup;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import poc.test.com.drawerwithormlite.R;
 import poc.test.com.drawerwithormlite.Util.ProjectUtils;
 import poc.test.com.drawerwithormlite.activity.DrawerActivity;
 import poc.test.com.drawerwithormlite.adapter.ListAdapter;
 import poc.test.com.drawerwithormlite.application.PocApp;
-import poc.test.com.drawerwithormlite.db.DBHelper;
 import poc.test.com.drawerwithormlite.db.dao.DaoDBHelper;
 import poc.test.com.drawerwithormlite.model.CountryList;
-import poc.test.com.drawerwithormlite.model.UserData;
+import poc.test.com.drawerwithormlite.model.GetUserDetailsResponse;
 import poc.test.com.drawerwithormlite.model.UserDataDaoBean;
-import poc.test.com.drawerwithormlite.netcom.Api;
+import poc.test.com.drawerwithormlite.netcom.Controller;
+import poc.test.com.drawerwithormlite.netcom.RequestType;
+import poc.test.com.drawerwithormlite.netcom.TaskCompleteListner;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
 
 public class HomeFragment extends Fragment implements ListAdapter.OnItemClick {
     RecyclerView recyclerView;
@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment implements ListAdapter.OnItemClick {
 
 
                 /*Green Dao Code*/
-        DaoDBHelper.getInstance(getActivity()).insertUserData(userDatas);
+        DaoDBHelper.getInstance().insertUserData(userDatas);
 
 
 /*
@@ -72,11 +72,17 @@ public class HomeFragment extends Fragment implements ListAdapter.OnItemClick {
         ArrayList<UserDataDaoBean> userDatasList = new ArrayList<>();
 
         //  userDatasList=dbHelper.getList();
-        userDatasList = DaoDBHelper.getInstance(getActivity()).getData();
+        userDatasList = DaoDBHelper.getInstance().getData();
         listAdapter = new ListAdapter(userDatasList, getActivity());
         recyclerView.setAdapter(listAdapter);
         listAdapter.setOnContactClick(this);
         getList();
+
+
+
+
+        //m.invoke(d);// throws java.lang.IllegalAccessException
+
 
         return view;
     }
@@ -93,11 +99,11 @@ public class HomeFragment extends Fragment implements ListAdapter.OnItemClick {
 
     public void getList() {
         showProgressDialoge();
-
         Call<ArrayList<CountryList>> countryListCall = PocApp.getInstance().getApi().getTopRatedMovies();
         countryListCall.enqueue(new Callback<ArrayList<CountryList>>() {
             @Override
             public void onResponse(Call<ArrayList<CountryList>> call, Response<ArrayList<CountryList>> response) {
+
                 ProjectUtils.showLog("RESPONSE", "" + new Gson().toJson(response.body()), ProjectUtils.ERROR_LOG);
 
                 hideProgreesDialoge();
@@ -110,30 +116,53 @@ public class HomeFragment extends Fragment implements ListAdapter.OnItemClick {
 
             }
         });
+       /* HashMap<String, String> params = new HashMap<>();
+
+        params.put("user_id", "2132");
+        params.put("deviceType", "1");
+        Controller.getInstance().doAction(getActivity(), RequestType.REQ_TYPE_TEST, params, GetUserDetailsResponse.class, true, new TaskCompleteListner() {
+            @Override
+            public void onTaskComplete(int methodName, CountryList obj) {
+                Log.e("ResGson",""+new Gson().toJson(obj));
+
+
+            }
+
+            @Override
+            public void onTaskCompleteError(int methodName, CountryList obj) {
+
+            }
+        });*/
 
     }
+
+
+
 
 
     public void showProgressDialoge() {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
+            if(!progressDialog.isShowing()){
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.setMessage("Please Wait..");
+                progressDialog.show();
+            }
         } else {
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
+
         }
 
     }
 
     public void hideProgreesDialoge() {
-        if (progressDialog != null) {
+        if (progressDialog != null&&progressDialog.isShowing()) {
             progressDialog.dismiss();
 
         }
 
 
     }
+
 
 
 }

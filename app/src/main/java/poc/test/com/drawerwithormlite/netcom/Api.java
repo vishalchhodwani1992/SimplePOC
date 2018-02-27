@@ -6,12 +6,16 @@ import poc.test.com.drawerwithormlite.model.CountryList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-/**
- * Created by ashishthakur on 22/2/18.
- */
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
-public interface Api {
+
+public interface Api{
+
 
     @GET(ApiConstants.getListCountry)
     Call<ArrayList<CountryList>> getTopRatedMovies();
+
+
+    @GET(ApiConstants.getListCountry)
+    Call<Object> getList();
 }

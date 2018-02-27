@@ -4,9 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
+
 
 public class UserData implements Serializable {
     @DatabaseField

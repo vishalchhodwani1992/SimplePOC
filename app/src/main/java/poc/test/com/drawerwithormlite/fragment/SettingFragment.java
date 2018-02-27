@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 import poc.test.com.drawerwithormlite.R;
 import poc.test.com.drawerwithormlite.activity.DrawerActivity;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
 
 public class SettingFragment extends Fragment {
     @Nullable

@@ -8,9 +8,7 @@ import org.greenrobot.greendao.annotation.Id;
 
 import java.io.Serializable;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
+
 @SuppressWarnings("serial")
 @Entity
 public class UserDataDaoBean implements Serializable{

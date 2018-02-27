@@ -12,9 +12,6 @@ import java.util.ArrayList;
 
 import poc.test.com.drawerwithormlite.R;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
 
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.Holder> {
 

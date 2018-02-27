@@ -16,9 +16,7 @@ import poc.test.com.drawerwithormlite.R;
 import poc.test.com.drawerwithormlite.activity.DrawerActivity;
 import poc.test.com.drawerwithormlite.adapter.DrawerAdapter;
 
-/**
- * Created by ashishthakur on 20/2/18.
- */
+
 
 public class DrawerFragmnet extends Fragment {
 

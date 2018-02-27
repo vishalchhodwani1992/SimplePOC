@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
+
 android {
     compileSdkVersion 27
     buildToolsVersion "26.0.2"
@@ -34,8 +35,13 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
-
+    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
     compile  'com.google.code.gson:gson:2.3.1'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.intuit.sdp:sdp-android:1.0.4'
+
+
 
 
 

@@ -1,13 +1,17 @@
 package poc.test.com.drawerwithormlite.Util;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.ImageView;
 
-/**
- * Created by ashishthakur on 22/2/18.
- */
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
+import poc.test.com.drawerwithormlite.R;
+
 
 public class ProjectUtils {
-    public static final int  ERROR_LOG=1;
+    public static final int ERROR_LOG = 1;
 
     public static void showLog(String Tag, String value, int logPrintingSection) {
         try {
@@ -22,4 +26,12 @@ public class ProjectUtils {
 
 
     }
+
+    public void loadImageFromUrl(String path, Context context, ImageView imageView) {
+        Glide.with(context).load(path).
+                placeholder(R.mipmap.ic_launcher)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imageView);
+    }
+
 }

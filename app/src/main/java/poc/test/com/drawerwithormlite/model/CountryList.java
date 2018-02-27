@@ -2,9 +2,6 @@ package poc.test.com.drawerwithormlite.model;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by ashishthakur on 22/2/18.
- */
 
 public class CountryList {
     String name;

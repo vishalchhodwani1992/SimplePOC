@@ -14,10 +14,6 @@ import poc.test.com.drawerwithormlite.R;
 import poc.test.com.drawerwithormlite.model.UserData;
 import poc.test.com.drawerwithormlite.model.UserDataDaoBean;
 
-/**
- * Created by ashishthakur on 21/2/18.
- */
-
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
 
